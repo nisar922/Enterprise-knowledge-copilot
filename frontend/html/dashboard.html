@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Knowledge Copilot</title>
+  <link rel="stylesheet" href="/ui/css/style.css">
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main class="container">
+    <h2 id="welcome">Welcome</h2>
+    <div class="grid" style="margin-bottom:1.25rem">
+      <div class="card stat"><div class="muted">Documents</div><div class="value" id="stat-docs">-</div></div>
+      <div class="card stat"><div class="muted">Ready to query</div><div class="value" id="stat-ready">-</div></div>
+      <div class="card stat"><div class="muted">Conversations</div><div class="value" id="stat-chats">-</div></div>
+    </div>
+    <div class="card">
+      <h3>Recent documents</h3>
+      <div id="recent"></div>
+      <p><a href="/ui/html/documents.html">Manage documents</a> · <a href="/ui/html/chat.html">Ask a question</a></p>
+    </div>
+    <div class="card hidden" id="admin-card">
+      <h3>Users (admin)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Username</th><th>Email</th><th>Role</th><th>Joined</th></tr></thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="form-error" id="error"></p>
+  </main>
+  <script src="/ui/javascript/api.js"></script>
+  <script src="/ui/javascript/dashboard.js"></script>
+</body>
+</html>

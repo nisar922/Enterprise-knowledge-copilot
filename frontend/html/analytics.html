@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics - Knowledge Copilot</title>
+  <link rel="stylesheet" href="/ui/css/style.css">
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main class="container">
+    <h2>Analytics</h2>
+    <div class="grid" id="stats" style="margin-bottom:1.25rem"></div>
+
+    <div class="card">
+      <h3>Queries per day (last 14 days)</h3>
+      <div class="chart" id="chart"></div>
+    </div>
+
+    <div class="card hidden" id="admin-card">
+      <h3>AI quality evaluation (admin)</h3>
+      <p class="muted">LLM judge scores faithfulness and answer relevance for recent chats. Uses Gemini calls, so it runs on demand.</p>
+      <button class="btn" id="quality-btn" type="button">Evaluate last 5 answers</button>
+      <p id="quality-out" class="muted"></p>
+      <hr style="border:0;border-top:1px solid var(--border);margin:1.2rem 0">
+      <p class="muted">Retrieval accuracy against <code>backend/eval/golden_set.json</code> (no LLM calls).</p>
+      <button class="btn" id="retrieval-btn" type="button">Run retrieval evaluation</button>
+      <p id="retrieval-out" class="muted"></p>
+      <div class="table-wrap"><table id="retrieval-table" class="hidden">
+        <thead><tr><th>Question</th><th>Expected document</th><th>Rank</th><th>Hit</th></tr></thead>
+        <tbody id="retrieval-body"></tbody>
+      </table></div>
+    </div>
+
+    <p class="form-error" id="error"></p>
+  </main>
+  <script src="/ui/javascript/api.js"></script>
+  <script src="/ui/javascript/analytics.js"></script>
+</body>
+</html>

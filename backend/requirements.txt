@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+pgvector
+pydantic-settings
+alembic
+bcrypt 
+PyJWT
+email-validator
+python-multipart
+pypdf
+python-docx
+langchain-text-splitters
+sentence-transformers
+google-genai

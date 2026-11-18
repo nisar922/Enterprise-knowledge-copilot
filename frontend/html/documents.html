@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents - Knowledge Copilot</title>
+  <link rel="stylesheet" href="/ui/css/style.css">
+</head>
+<body>
+  <nav id="nav"></nav>
+  <main class="container">
+    <div class="card">
+      <h3>Upload documents</h3>
+      <div class="dropzone" id="dropzone">
+        Drag &amp; drop files here, or click to browse<br>
+        <small>PDF, DOCX, TXT · max 10 MB each</small>
+      </div>
+      <input type="file" id="file-input" accept=".pdf,.docx,.txt" multiple hidden>
+      <ul class="log" id="upload-log"></ul>
+    </div>
+    <div class="card">
+      <h3>Your documents</h3>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Search by filename...">
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Status</th><th>Uploaded</th><th></th></tr></thead>
+          <tbody id="docs-body"></tbody>
+        </table>
+      </div>
+      <p class="form-error" id="error"></p>
+    </div>
+  </main>
+  <dialog id="preview-dialog">
+    <h3 id="preview-title">Preview</h3>
+    <div id="preview-body"></div>
+    <button class="btn btn-outline" id="preview-close" type="button">Close</button>
+  </dialog>
+  <script src="/ui/javascript/api.js"></script>
+  <script src="/ui/javascript/documents.js"></script>
+</body>
+</html>
